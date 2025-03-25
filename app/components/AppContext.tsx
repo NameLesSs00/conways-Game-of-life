@@ -93,13 +93,6 @@ export function AppContext({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const centerPattern = (pattern: number[][]) => {
-    const centerRow = Math.floor(Rows / 2);
-    const centerCol = Math.floor(Cols / 2);
-    return pattern.map(([r, c]) => [centerRow + r, centerCol + c]);
-  };
-
-
   const PATTERNS = {
     GLIDER_GUN: [
       [5, 1],
