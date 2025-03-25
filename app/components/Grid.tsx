@@ -5,14 +5,12 @@ import { useEffect, useState } from "react";
 function Grid() {
   const { grid, setAlive } = useGameContext();
 
-  // Constants for grid dimensions
   const ROWS = 30;
   const COLS = 50;
-  const CELL_SIZE = 15; // Base cell size
+  const CELL_SIZE = 15;
   const GAP_SIZE = 1;
   const BORDER_WIDTH = 2;
 
-  // Calculate base grid dimensions
   const gridWidth = COLS * (CELL_SIZE + GAP_SIZE) - GAP_SIZE + 2 * BORDER_WIDTH;
   const gridHeight =
     ROWS * (CELL_SIZE + GAP_SIZE) - GAP_SIZE + 2 * BORDER_WIDTH;
@@ -21,22 +19,18 @@ function Grid() {
 
   useEffect(() => {
     const handleResize = () => {
-      // Calculate available space (accounting for potential margins/padding)
       const availableWidth = window.innerWidth * 0.95;
       const availableHeight = window.innerHeight * 0.7;
 
-      // Calculate scale that fits both dimensions
       const widthScale = availableWidth / gridWidth;
       const heightScale = availableHeight / gridHeight;
-      const newScale = Math.min(widthScale, heightScale, 1); // Never scale up beyond 1
+      const newScale = Math.min(widthScale, heightScale, 1);
 
-      setScale(Math.max(newScale, 0.5)); // Minimum scale of 0.5 (50%)
+      setScale(Math.max(newScale, 0.5));
     };
 
-    // Initial calculation
     handleResize();
 
-    // Update on window resize
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [gridWidth, gridHeight]);
@@ -45,7 +39,6 @@ function Grid() {
     setAlive(row, col);
   };
 
-  // Calculate scaled dimensions
   const scaledWidth = gridWidth * scale;
   const scaledHeight = gridHeight * scale;
 
