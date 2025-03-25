@@ -247,7 +247,7 @@ export function AppContext({ children }: { children: ReactNode }) {
     );
     setGrid(initialGrid);
     resume();
-  }, [resume, Rows, Cols]);
+  },);
 
   return (
     <GameContext.Provider
