@@ -26,6 +26,9 @@ function Home() {
         <div className="w-full max-w-md">
           <Menu />
         </div>
+        <div className="text-[#66ff33] text-center text-sm mt-2">
+          Done by Paul Samy
+        </div>
       </main>
     </div>
   );

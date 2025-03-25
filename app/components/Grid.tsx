@@ -39,8 +39,6 @@ function Grid() {
     setAlive(row, col);
   };
 
-  const scaledWidth = gridWidth * scale;
-  const scaledHeight = gridHeight * scale;
 
   return (
     <div className="flex justify-center items-center w-full h-full overflow-hidden p-4">

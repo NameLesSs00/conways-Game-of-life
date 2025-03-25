@@ -55,7 +55,6 @@ function Menu() {
     <div
       className={`${orbitron.className} bg-[#262626] flex flex-col justify-center items-center p-4 gap-2 w-full max-w-[500px] mx-auto rounded-lg shadow-lg`}
     >
-      {/* Generation Counter */}
       <div className="w-full bg-[#66ff33] p-2 rounded text-center">
         <p className="text-sm">Generation</p>
         <p className="font-bold">{generation.toString()}</p>
