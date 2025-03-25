@@ -15,7 +15,7 @@ type Funcs = {
   clearGrid: () => void;
   setGridPattern: (patternId: number) => void;
   setGrid: (newGrid: number[][]) => void;
-  generation: Number;
+  generation: number;
 };
 
 const GameContext = createContext<(Funcs & { grid: number[][] }) | null>(null);
@@ -240,14 +240,14 @@ export function AppContext({ children }: { children: ReactNode }) {
       return newGrid;
     });
   };
-
+  //here...
   useEffect(() => {
     const initialGrid = Array.from({ length: Rows }, () =>
       Array.from({ length: Cols }, () => (Math.random() > 0.6 ? 1 : 0))
     );
     setGrid(initialGrid);
     resume();
-  }, []);
+  }, [resume, Rows, Cols]);
 
   return (
     <GameContext.Provider
