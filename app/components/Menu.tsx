@@ -12,7 +12,7 @@ function Menu() {
   const { resume, pause, clearGrid, setGridPattern, generation, setGrid } =
     useGameContext();
 
-  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning, setIsRunning] = useState(true);
   const [showPatterns, setShowPatterns] = useState(false);
 
   const handleStartPauseResume = () => {
